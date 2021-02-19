@@ -58,8 +58,13 @@ const App = () => {
 useEffect(()=>{
   document.addEventListener("keydown",keyDLogic);
   return ()=>document.removeEventListener("keydown",keyDLogic);
-}
-);
+},
+[]);
+useEffect(()=>{
+  document.addEventListener("keydown",keyDLogic);
+  return ()=>document.removeEventListener("keydown",keyDLogic);
+},
+[x,y]);
   return (
     <div className="playground">
       <button onClick={reset} className="reset">
